@@ -1,14 +1,16 @@
-using GameStore.API.Dtos;
+using GameStore.API.Data;
 using GameStore.API.Endpoints;
-using System.Data;
-using System.Security.Cryptography;
-using System.Xml.Linq;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
+var connString = builder.Configuration.GetConnectionString("GameStore");
+builder.Services.AddSqlite<GameStoreContext>(connString);
+
 var app = builder.Build();
 
 app.MapGamesEndpoints();
+
+app.MigrateDb();
 
 app.Run();
