@@ -1,24 +1,24 @@
 ﻿GET http://localhost:5085/games
 ###
-GET http://localhost:5085/games/1
+GET http://localhost:5085/games/3
 ###
 POST http://localhost:5085/games
 Content-Type: application/json
 
 {
-  "name": "Minecraft",
-  "genre": "Kids",
-  "price": 19.99,
-  "releaseDate" : "2011-11-18"
+  "name": "Lol",
+  "genreId": "2",
+  "price": 39.99,
+  "releaseDate" : "2021-11-18"
 }
 ###
-PUT http://localhost:5085/games/1
+PUT http://localhost:5085/games/4
 Content-Type: application/json
 
 {
     "name": "Street Fighter 4",
-    "genre": "Casual",
-    "price": 442.99,
+    "genreId": 1,
+    "price": 42.99,
     "releaseDate": "1999-07-15"
 }
 
